@@ -12,6 +12,7 @@
 var currentInput = "0";
 var memory = "0";
 var operator = 0;
+var memvalue;
 // Helper function for displaying the current input
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
@@ -187,7 +188,6 @@ function tanDegree() {
     displayCurrentInput();
 }
 // Calculate using operator, the memory and what is current
-var memvalue;
 
 function memoryStore() {
     memvalue = document.getElementById('screen').value;
