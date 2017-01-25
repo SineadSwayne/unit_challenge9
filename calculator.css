@@ -1,0 +1,23 @@
+html {
+background-color: lavender;
+}
+
+body {
+background-color: aliceblue;
+text-align: center;
+}
+
+h1 {
+  margin: 40px 0px 20px 0px;
+  color: #95c500;
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.btn-block {
+    padding: 18px 28px;
+    font-size: 22px;
+    border-radius: 8px;
+    text-len
+}
