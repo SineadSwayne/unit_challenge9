@@ -102,7 +102,7 @@ function changeSign() {
     displayCurrentInput();
 }
 // Clear the current input back to 0
-function clearcurrent() {
+function clearCurrent() {
     currentInput = "0";
     displayCurrentInput();
 }
@@ -188,26 +188,26 @@ function tanDegree() {
 }
 // Calculate using operator, the memory and what is current
 var memvalue;
-
+// Stores the input on the screen
 function memoryStore() {
     memvalue = document.getElementById('screen').value;
 }
-
+// Recalls the stored input
 function memoryRecall() {
     currentInput = memvalue;
     displayCurrentInput();
 }
-
+// Adds the current input to the stored input
 function memoryPlus() {
     currentInput = parseInt(memvalue) + parseInt(currentInput);
     displayCurrentInput();
 }
-
+// Subtracts the current input from the stored input
 function memoryMinus() {
     currentInput = parseInt(memvalue) - parseInt(currentInput);
     displayCurrentInput();
 }
-
+// Clears the stored memory and resets it to 0
 function memoryClear() {
     memvalue = "0";
     currentInput = memvalue;
