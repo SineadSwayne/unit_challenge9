@@ -137,51 +137,58 @@ function inverse() {
     currentInput = (1 / currentInput)
     displayCurrentInput();
 }
-
+// Holds the value of Pie
 function enterPie() {
     currentInput = Math.PI;
     displayCurrentInput();
 }
-
+// Sin of a numerical value expressed in
 function sinOfInput() {
     currentInput = Math.sin(currentInput);
     displayCurrentInput();
 }
-
+// Cos of a numerical value expressed in
 function cosOfInput() {
     currentInput = Math.cos(currentInput);
     displayCurrentInput();
 }
+// Tan of a numerical value expressed in
 
 function tanOfInput() {
     currentInput = Math.tan(currentInput);
     displayCurrentInput();
 }
+// Sin of a numerical value expressed in radians
 
 function sinRadian() {
     currentInput = Math.sin(currentInput);
     displayCurrentInput();
 }
+// Cos of a numerical value expressed in radians
 
 function cosRadian() {
     currentInput = Math.cos(currentInput);
     displayCurrentInput();
 }
+// Tan of a numerical value expressed in radians
 
 function tanRadian() {
     currentInput = Math.tan(currentInput);
     displayCurrentInput();
 }
+// Sin of a numerical value expressed in degrees
 
 function sinDegree() {
     currentInput = Math.sin((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
+// Cos of a numerical value expressed in degrees
 
 function cosDegree() {
     currentInput = Math.cos((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
+// Ta  of a numerical value expressed in degrees
 
 function tanDegree() {
     currentInput = Math.tan((Math.PI / 180) * currentInput);
