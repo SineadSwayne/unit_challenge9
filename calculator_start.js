@@ -2,6 +2,7 @@ var currentInput = "0";
 var memory = "0";
 var operator = 0;
 var memValue; //Value stored in the memory
+
 /**
  * Helper function for displaying the current input
  * @author Steve Temple
@@ -10,6 +11,7 @@ var memValue; //Value stored in the memory
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
 }
+
 /**
  * Adds a digit to the current input
  * @author Steve Temple
@@ -25,6 +27,7 @@ function addDigit(dig) {
     }
     displayCurrentInput();
 }
+
 /**
  * Adds a decimal to the current input
  * @author Steve Temple
@@ -43,6 +46,7 @@ function addDecimal() {
     }
     displayCurrentInput();
 }
+
 /**
  * Clears everything.
  * @author Steve Temple
@@ -54,6 +58,7 @@ function allClear() {
     memory = "0"; //clear memory
     displayCurrentInput();
 }
+
 /**
  * Stores the last operator pushed for multiply, divide, add, or subtract.
  * @author Steve Temple
@@ -80,6 +85,7 @@ function storeOperator(op) {
     currentInput = "0";
     displayCurrentInput();
 }
+
 /**
  * Calculate using operator, the memory and what is current.
  * @author Steve Temple
@@ -111,6 +117,7 @@ function calculate() {
     memory = "0"; //clear memory
     displayCurrentInput();
 }
+
 // Change the sign of the current input
 /**
  * This is a function for changing the sign of the current input
@@ -121,6 +128,7 @@ function changeSign() {
     currentInput = (currentInput * -1)
     displayCurrentInput();
 }
+
 /**
  * This is a function for clearing the current input back to 0.
  * @author Sinead Swayne
@@ -130,6 +138,7 @@ function clearCurrent() {
     currentInput = "0";
     displayCurrentInput();
 }
+
 /**
  * Change the current input to a percentage.
  * @author Sinead Swayne
@@ -278,6 +287,7 @@ function memoryMinus() {
     currentInput = parseInt(memValue) - parseInt(currentInput);
     displayCurrentInput();
 }
+
 /**
  * This is a function for erasing the stored memory
  * @author Keilani Burak
