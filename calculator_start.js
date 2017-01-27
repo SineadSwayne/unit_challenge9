@@ -98,6 +98,12 @@ function calculate() {
     displayCurrentInput();
 }
 // Change the sign of the current input
+/**
+* This is a function for changing the sign of the current input
+* @author Sinead Swayne
+* @return {number} Returns the result
+*/
+
 function changeSign() {
     currentInput = (currentInput * -1)
     displayCurrentInput();
@@ -188,7 +194,7 @@ function cosDegree() {
     currentInput = Math.cos((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
-// Ta  of a numerical value expressed in degrees
+// Tan of a numerical value expressed in degrees
 
 function tanDegree() {
     currentInput = Math.tan((Math.PI / 180) * currentInput);
