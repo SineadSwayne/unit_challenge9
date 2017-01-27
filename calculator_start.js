@@ -83,7 +83,7 @@ function storeOperator(op) {
 /**
 * Calculate using operator, the memory and what is current.
 * @author Steve Temple
-* @return {number} Returns a numerical value after utilizing an operator function from the storeOperator(op) function or a message displaying an error warning if user attempts to divide by zero
+* @return {number} Returns a product, sum, or difference after utilizing an operator function from the storeOperator(op) function or a message displaying an error warning if user attempts to divide by zero
 */
 function calculate() {
     if (operator == 1) {
@@ -276,7 +276,7 @@ function memoryRecall() {
 }
 
 /**
-* This is a function for addomg the current input to the stored memory
+* This is a function for adding the current input to the stored memory
 * @author Keilani Burak
 * @return {number} Returns a new current input
 */
