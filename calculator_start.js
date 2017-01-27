@@ -1,7 +1,7 @@
 var currentInput = "0";
 var memory = "0";
 var operator = 0;
-var memvalue;
+var memValue; //Value stored in the memory
 /**
 * Helper function for displaying the current input
 * @author Steve Temple
@@ -140,7 +140,12 @@ function percentage() {
     currentInput = (currentInput / 100);
     displayCurrentInput();
 }
-// Calculate the factorial of the current input
+
+/**
+* This is a function for finding the factorial of the current input
+* @author Keilani Burak
+* @return {number} Returns the factorial
+*/
 function factorial() {
     var result = 1;
     for (i = currentInput; i > 0; i--) {
@@ -150,79 +155,151 @@ function factorial() {
     currentInput = result;
     displayCurrentInput();
 }
-// Calculate the square of the current input
+
+/**
+* This is a function for calculating the current input squared
+* @author Keilani Burak
+* @return {number} Returns the input squared
+*/
 function square() {
     currentInput = (Math.pow(currentInput, 2));
     displayCurrentInput();
 }
-// Calculate the square root of the current input
+
+/**
+* This is a function for calculating the square root of the current input
+* @author Keilani Burak
+* @return {number} Returns the square root
+*/
 function squareRoot() {
     currentInput = (Math.sqrt(currentInput));
     displayCurrentInput();
 }
-// Calculate the inverse of the current input
+
+/**
+* This is a function for calculating the inverse of the current input
+* @author Keilani Burak
+* @return {number} Returns the inverse
+*/
 function inverse() {
     currentInput = (1 / currentInput)
     displayCurrentInput();
 }
-// Holds the value of Pie
+
+/**
+* This is a function for entering the value of Pi
+* @author Sinead Swayne
+* @return {number} Returns the numerical value for Pi on screen
+*/
 function enterPie() {
     currentInput = Math.PI;
     displayCurrentInput();
 }
 
-// Sin of a numerical value expressed in radians
+/**
+* This is a function for finding the sin of a numerical value in radians
+* @author Sinead Swayne
+* @return {number} Returns the sin of the current input
+*/
 function sinRadian() {
     currentInput = Math.sin(currentInput);
     displayCurrentInput();
 }
-// Cos of a numerical value expressed in radians
+
+/**
+* This is a function for finding the cos of a numerical value in radians
+* @author Sinead Swayne
+* @return {number} Returns the cos of the current input
+*/
 function cosRadian() {
     currentInput = Math.cos(currentInput);
     displayCurrentInput();
 }
-// Tan of a numerical value expressed in radians
+
+/**
+* This is a function for finding the tan of a numerical value in radians
+* @author Sinead Swayne
+* @return {number} Returns the tan of the current input
+*/
 function tanRadian() {
     currentInput = Math.tan(currentInput);
     displayCurrentInput();
 }
-// Sin of a numerical value expressed in degrees
+
+/**
+* This is a function for finding the sin of a numerical value in degrees
+* @author Keilani Burak
+* @return {number} Returns the sin of the current input
+*/
 function sinDegree() {
     currentInput = Math.sin((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
-// Cos of a numerical value expressed in degrees
+
+/**
+* This is a function for finding the cos of a numerical value in degrees
+* @author Keilani Burak
+* @return {number} Returns the cos of the current input
+*/
 function cosDegree() {
     currentInput = Math.cos((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
-// Tan of a numerical value expressed in degrees
+
+/**
+* This is a function for finding tan of a numerical value in degrees
+* @author Keilani Burak
+* @return {number} Returns the tan of the current input
+*/
 function tanDegree() {
     currentInput = Math.tan((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
-// Calculate using operator, the memory and what is current
-var memValue;
-// Stores the input on the screen
+
+/**
+* This is a function for storing the current input into the memory
+* @author Keilani Burak
+* @return {number} Returns the current input on the screen
+*/
 function memoryStore() {
-    memvalue = document.getElementById('screen').value;
+    memValue = document.getElementById('screen').value;
 }
-// Recalls the stored input
+
+/**
+* This is a function for recalling the stored memory
+* @author Keilani Burak
+* @return {number} Returns the stored memory on the screen
+*/
 function memoryRecall() {
     currentInput = memValue;
     displayCurrentInput();
 }
-// Adds the current input to the stored input
+
+/**
+* This is a function for addomg the current input to the stored memory
+* @author Keilani Burak
+* @return {number} Returns a new current input
+*/
+
 function memoryPlus() {
     currentInput = parseInt(memValue) + parseInt(currentInput);
     displayCurrentInput();
 }
-// Subtracts the current input from the stored input
+
+/**
+* This is a function for subtracting the current input from the stored memory
+* @author Keilani Burak
+* @return {number} Returns the new current input
+*/
 function memoryMinus() {
     currentInput = parseInt(memValue) - parseInt(currentInput);
     displayCurrentInput();
 }
-// Clears the stored memory and resets it to 0
+/**
+* This is a function for erasing the stored memory
+* @author Keilani Burak
+* @return {number} Returns a 0 on the screen and an empty memory
+*/
 function memoryClear() {
     memValue = "0";
     currentInput = memValue;
