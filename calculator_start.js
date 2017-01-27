@@ -1,23 +1,21 @@
-/** TODO:
- * 1. Add these new functions: percentage, inverse, factorial, square and square root
- * 2. Bootstrap it to make it pretty!
- * 3. User can only type numbers in the display (30 max!), and the numbers are right aligned.
- * 4. Fix divide by 0 errors!
- * 5. Add the ability to clear the current input, but not memory.
- * 6. Challenge: Add trig functions (in radian AND degree mode)
- * 7. Extra Challenge: Add mc, m+, m-, mr butons that work!
- * 8. Super Challenge: Add ( and ) buttons that work!
- * 9. Super Duper Challenge: Add exponents (negatives too!)
- */
 var currentInput = "0";
 var memory = "0";
 var operator = 0;
 var memvalue;
-// Helper function for displaying the current input
+/**
+* Helper function for displaying the current input
+* @author Steve Temple
+* @return {number} Returns the result
+*/
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
 }
-// Adds a digit to the current input
+/**
+* Adds a digit to the current input
+* @author Steve Temple
+* @param {dig}  This is the original number
+* @return {number} Returns the result
+*/
 function addDigit(dig) {
     if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
         currentInput = dig;
@@ -27,7 +25,11 @@ function addDigit(dig) {
     }
     displayCurrentInput();
 }
-// Adds a decimal to the current input
+/**
+* Adds a decimal to the current input
+* @author Steve Temple
+* @return {number} Returns the result
+*/
 function addDecimal() {
     if (currentInput.length == 0) {
         //no leading ".", use "0."
@@ -41,15 +43,23 @@ function addDecimal() {
     }
     displayCurrentInput();
 }
-// Clears everything.
+/**
+* Clears everything.
+* @author Steve Temple
+* @return {number} Returns a clear screen/memory.
+*/
 function allClear() {
     currentInput = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
 }
-
-// Stores the last operator pushed for multiply, divide, add, or subtract.
+/**
+* Stores the last operator pushed for multiply, divide, add, or subtract.
+* @author Steve Temple
+* @param {op}  This is the operator that has been choosen.
+* @return {number} Returns a manipulated operator.
+*/
 function storeOperator(op) {
     if (op.indexOf("") > -1) {
         operator = 1;
@@ -70,7 +80,11 @@ function storeOperator(op) {
     currentInput = "0";
     displayCurrentInput();
 }
-// Calculate using operator, the memory and what is current
+/**
+* Calculate using operator, the memory and what is current.
+* @author Steve Temple
+* @return {number} Returns a numerical value after utilizing an operator function from the storeOperator(op) function or a message displaying an error warning if user attempts to divide by zero
+*/
 function calculate() {
     if (operator == 1) {
         currentInput = eval(memory) * eval(currentInput);
@@ -108,12 +122,20 @@ function changeSign() {
     currentInput = (currentInput * -1)
     displayCurrentInput();
 }
-// Clear the current input back to 0
+/**
+* This is a function for clearing the current input back to 0.
+* @author Sinead Swayne
+* @return {number} Returns a clear input
+*/
 function clearCurrent() {
     currentInput = "0";
     displayCurrentInput();
 }
-// Change the current input to a percentage
+/**
+* Change the current input to a percentage.
+* @author Sinead Swayne
+* @return {number} Returns numerical value as a percentage.
+*/
 function percentage() {
     currentInput = (currentInput / 100);
     displayCurrentInput();
