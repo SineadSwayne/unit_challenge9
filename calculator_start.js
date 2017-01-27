@@ -48,7 +48,7 @@ function allClear() {
     memory = "0"; //clear memory
     displayCurrentInput();
 }
-// Stores the last operator pushed for multiply, divide, add, or subtract.
+
 // Stores the last operator pushed for multiply, divide, add, or subtract.
 function storeOperator(op) {
     if (op.indexOf("") > -1) {
@@ -148,86 +148,61 @@ function enterPie() {
     currentInput = Math.PI;
     displayCurrentInput();
 }
-// Sin of a numerical value expressed in
-function sinOfInput() {
-    currentInput = Math.sin(currentInput);
-    displayCurrentInput();
-}
-// Cos of a numerical value expressed in
-function cosOfInput() {
-    currentInput = Math.cos(currentInput);
-    displayCurrentInput();
-}
-// Tan of a numerical value expressed in
 
-function tanOfInput() {
-    currentInput = Math.tan(currentInput);
-    displayCurrentInput();
-}
 // Sin of a numerical value expressed in radians
-
 function sinRadian() {
     currentInput = Math.sin(currentInput);
     displayCurrentInput();
 }
 // Cos of a numerical value expressed in radians
-
 function cosRadian() {
     currentInput = Math.cos(currentInput);
     displayCurrentInput();
 }
 // Tan of a numerical value expressed in radians
-
 function tanRadian() {
     currentInput = Math.tan(currentInput);
     displayCurrentInput();
 }
 // Sin of a numerical value expressed in degrees
-
 function sinDegree() {
     currentInput = Math.sin((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
 // Cos of a numerical value expressed in degrees
-
 function cosDegree() {
     currentInput = Math.cos((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
 // Tan of a numerical value expressed in degrees
-
 function tanDegree() {
     currentInput = Math.tan((Math.PI / 180) * currentInput);
     displayCurrentInput();
 }
 // Calculate using operator, the memory and what is current
-<<<<<<< HEAD
-
-=======
-var memvalue;
+var memValue;
 // Stores the input on the screen
->>>>>>> origin/master
 function memoryStore() {
     memvalue = document.getElementById('screen').value;
 }
 // Recalls the stored input
 function memoryRecall() {
-    currentInput = memvalue;
+    currentInput = memValue;
     displayCurrentInput();
 }
 // Adds the current input to the stored input
 function memoryPlus() {
-    currentInput = parseInt(memvalue) + parseInt(currentInput);
+    currentInput = parseInt(memValue) + parseInt(currentInput);
     displayCurrentInput();
 }
 // Subtracts the current input from the stored input
 function memoryMinus() {
-    currentInput = parseInt(memvalue) - parseInt(currentInput);
+    currentInput = parseInt(memValue) - parseInt(currentInput);
     displayCurrentInput();
 }
 // Clears the stored memory and resets it to 0
 function memoryClear() {
-    memvalue = "0";
-    currentInput = memvalue;
+    memValue = "0";
+    currentInput = memValue;
     displayCurrentInput();
 }
