@@ -15,7 +15,7 @@ function displayCurrentInput() {
 /**
  * Adds a digit to the current input
  * @author Steve Temple
- * @param {dig}  This is the original number
+ * @param {string} dig This is the character representing the dig
  */
 function addDigit(dig) {
     if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
@@ -59,7 +59,7 @@ function allClear() {
 /**
  * Stores the last operator pushed for multiply, divide, add, or subtract.
  * @author Steve Temple
- * @param {op}  This is the operator that has been choosen.
+ * @param {string} op This is the character representing the operator
  */
 function storeOperator(op) {
     if (op.indexOf("") > -1) {
