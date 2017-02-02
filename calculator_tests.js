@@ -33,6 +33,37 @@ QUnit.test("Square root test", function( assert ){
     addDigit('49');
     squareRoot();
     assert.equal(document.getElementById("screen").value, "7", "Passed - Expected 7");
+<<<<<<< HEAD
+=======
+});
+
+QUnit.test("Inverse test", function( assert){
+    clearCurrent();
+    addDigit('8');
+    inverse();
+    assert.equal(document.getElementById("screen").value, "0.125", "Passed - Expected 0.125")
+});
+
+QUnit.test("Sin of Degree test", function (assert){
+    clearCurrent();
+    addDigit('90');
+    sinDegree();
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+});
+
+QUnit.test("Cos of degree test", function ( assert){
+    clearCurrent();
+    addDigit('180');
+    cosDegree();
+    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
+});
+
+
+QUnit.test("Tan of degree test", function ( assert){
+    clearCurrent();
+    addDigit('45');
+    tanDegree();
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
 });
 
 QUnit.test( "Change sign test", function( assert ) {

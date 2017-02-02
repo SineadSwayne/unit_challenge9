@@ -2,6 +2,7 @@ var currentInput = "0";
 var memory = "0";
 var operator = 0;
 var memValue; //Value stored in the memory
+var precision = 1000000;
 
 /**
  * Helper function for displaying the current input
@@ -195,7 +196,7 @@ function enterPie() {
  * @author Sinead Swayne
  */
 function sinRadian() {
-    currentInput = Math.sin(currentInput);
+    currentInput = Math.round(Math.sin(currentInput)*precision)/precision;
     displayCurrentInput();
 }
 
@@ -204,7 +205,7 @@ function sinRadian() {
  * @author Sinead Swayne
  */
 function cosRadian() {
-    currentInput = Math.cos(currentInput);
+    currentInput = Math.round(Math.cos(currentInput)*precision)/precision;
     displayCurrentInput();
 }
 
@@ -213,7 +214,7 @@ function cosRadian() {
  * @author Sinead Swayne
  */
 function tanRadian() {
-    currentInput = Math.tan(currentInput);
+    currentInput = Math.round(Math.tan(currentInput)*precision)/precision;
     displayCurrentInput();
 }
 
@@ -222,7 +223,7 @@ function tanRadian() {
  * @author Keilani Burak
  */
 function sinDegree() {
-    currentInput = Math.sin((Math.PI / 180) * currentInput);
+    currentInput = Math.round(Math.sin((Math.PI / 180) * currentInput)*precision)/precision;
     displayCurrentInput();
 }
 
@@ -231,7 +232,7 @@ function sinDegree() {
  * @author Keilani Burak
  */
 function cosDegree() {
-    currentInput = Math.cos((Math.PI / 180) * currentInput);
+    currentInput = Math.round(Math.cos((Math.PI / 180) * currentInput)*precision)/precision;
     displayCurrentInput();
 }
 
@@ -240,7 +241,7 @@ function cosDegree() {
  * @author Keilani Burak
  */
 function tanDegree() {
-    currentInput = Math.tan((Math.PI / 180) * currentInput);
+    currentInput = Math.round(Math.tan((Math.PI / 180) * currentInput)*precision)/precision;
     displayCurrentInput();
 }
 
