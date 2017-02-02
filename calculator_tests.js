@@ -33,10 +33,6 @@ QUnit.test("Square root test", function( assert ){
     addDigit('49');
     squareRoot();
     assert.equal(document.getElementById("screen").value, "7", "Passed - Expected 7");
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 });
 
 QUnit.test("Inverse test", function( assert){
@@ -66,7 +62,6 @@ QUnit.test("Tan of degree test", function ( assert){
     addDigit('45');
     tanDegree();
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
->>>>>>> origin/master
 });
 
 QUnit.test("Inverse test", function( assert){
