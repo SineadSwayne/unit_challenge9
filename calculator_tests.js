@@ -76,3 +76,4 @@ QUnit.test("Square test", function( assert ){
     square();
     assert.equal(document.getElementById("screen").value, "36", "Passed - Expected 36");
 });
+
