@@ -135,3 +135,64 @@ QUnit.test("Square test", function( assert ){
     assert.equal(document.getElementById("screen").value, "36", "Passed - Expected 36");
 });
 
+QUnit.test("Pie test", function( assert ){
+    clearCurrent();
+    addDigit('1');
+    enterPie();
+    assert.equal(document.getElementById("screen").value, "3.141592653589793", "Passed - Expected 3.141592653589793");
+});
+
+QUnit.test("Sin of Radian test", function (assert){
+    clearCurrent();
+    addDigit('90');
+    sinRadian();
+    assert.equal(document.getElementById("screen").value, "0.893997", "Passed - Expected 0.893997")
+});
+
+QUnit.test("Cos of Radian test", function ( assert){
+    clearCurrent();
+    addDigit('180');
+    cosRadian();
+    assert.equal(document.getElementById("screen").value, "-0.59846", "Passed - Expected -0.59846")
+});
+
+
+QUnit.test("Tan of Radian test", function ( assert){
+    clearCurrent();
+    addDigit('45');
+    tanRadian();
+    assert.equal(document.getElementById("screen").value, "1.619775", "Passed - Expected 1.619775")
+});
+
+
+QUnit.test("All Clear test", function ( assert){
+    clearCurrent();
+    addDigit('8');
+    allClear();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
+});
+
+
+QUnit.test("Displays current input test", function ( assert){
+    clearCurrent();
+    addDigit('8');
+    displayCurrentInput();
+    assert.equal(document.getElementById("screen").value, "8", "Passed - Expected 8")
+});
+
+
+QUnit.test("Calculates using an operator test", function ( assert){
+    clearCurrent();
+    addDigit('5');
+    storeOperator("+");
+    addDigit('3');
+    storeOperator("-");
+    addDigit('7');
+    storeOperator("*");
+    addDigit('7');
+    storeOperator("/");
+    addDigit('7');
+    calculate();
+    displayCurrentInput();
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+});
