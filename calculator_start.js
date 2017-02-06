@@ -62,7 +62,7 @@ function allClear() {
  * @param {string} op This is the character representing the operator
  */
 function storeOperator(op) {
-    if (op.indexOf("") > -1) {
+    if (op.indexOf("*") > -1) {
         operator = 1;
     }; //codes for
     if (op.indexOf("/") > -1) {

@@ -197,6 +197,7 @@ QUnit.test("Calculates using an operator test", function ( assert){
     assert.equal(document.getElementById("screen").value, "1000", "Passed - Expected 1000")
 });
 
+// Test for storing the current input into the memory
 QUnit.test("Memory store test", function ( assert){
     clearCurrent();
     addDigit('3')
@@ -204,12 +205,14 @@ QUnit.test("Memory store test", function ( assert){
     assert.equal(memValue, "3", "Passed - Expected 3")
            });
 
+// Test for recalling the stored memory
 QUnit.test("Memory recall test", function ( assert){
     clearCurrent();
     memoryRecall();
     assert.equal(document.getElementById("screen").value, "3", "Passed - Expected 3")
 });
 
+// Test for adding the current input to the stored memory
 QUnit.test("Memory plus test", function (assert){
     clearCurrent();
     addDigit('5');
@@ -217,6 +220,7 @@ QUnit.test("Memory plus test", function (assert){
     assert.equal(document.getElementById("screen").value, "8", "Passed - Expected 8")
 });
 
+// Test for subtracting the current input from the stored memory
 QUnit.test("Memory minus test", function ( assert){
     clearCurrent();
     addDigit('1');
@@ -224,6 +228,7 @@ QUnit.test("Memory minus test", function ( assert){
     assert.equal(document.getElementById("screen").value, "2", "Passed - Expected 2")
 });
 
+// Test for erasing the stored memory
 QUnit.test("Memory clear test", function ( assert){
     clearCurrent();
     memoryClear();
