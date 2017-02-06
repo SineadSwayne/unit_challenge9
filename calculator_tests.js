@@ -52,10 +52,34 @@ QUnit.test("Sin of Degree test", function (assert){
     addDigit('90');
     sinDegree();
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+    clearCurrent();
+    addDigit('30');
+    sinDegree();
+    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
+    clearCurrent();
+    addDigit('180');
+    sinDegree();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
+    clearCurrent();
+    addDigit("270");
+    sinDegree();
+    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
 });
 
 // Test for finding the cos of a numerical value in degrees
 QUnit.test("Cos of degree test", function ( assert){
+    clearCurrent();
+    addDigit('0');
+    cosDegree();
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+    clearCurrent();
+    addDigit('90');
+    cosDegree();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
+    clearCurrent();
+    addDigit('60');
+    cosDegree();
+    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
     clearCurrent();
     addDigit('180');
     cosDegree();
