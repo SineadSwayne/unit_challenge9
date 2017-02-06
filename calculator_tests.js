@@ -14,6 +14,7 @@ QUnit.test( "Add decimal test", function( assert ) {
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
 
+// Test for finding the factorial of the current input
 QUnit.test("Factorial test", function( assert ) {
     clearCurrent();
     addDigit('4');
@@ -21,6 +22,7 @@ QUnit.test("Factorial test", function( assert ) {
     assert.equal(document.getElementById("screen").value, "24", "Passed - Expected 24");
 });
 
+// Test for calculating the current input squared
 QUnit.test("Square test", function( assert ){
     clearCurrent();
     addDigit('6');
@@ -28,6 +30,7 @@ QUnit.test("Square test", function( assert ){
     assert.equal(document.getElementById("screen").value, "36", "Passed - Expected 36");
 });
 
+// Test for calculating the square root of the current input
 QUnit.test("Square root test", function( assert ){
     clearCurrent();
     addDigit('49');
@@ -35,6 +38,7 @@ QUnit.test("Square root test", function( assert ){
     assert.equal(document.getElementById("screen").value, "7", "Passed - Expected 7");
 });
 
+// Test for calculating the inverse of the current input
 QUnit.test("Inverse test", function( assert){
     clearCurrent();
     addDigit('8');
@@ -42,6 +46,7 @@ QUnit.test("Inverse test", function( assert){
     assert.equal(document.getElementById("screen").value, "0.125", "Passed - Expected 0.125")
 });
 
+// Test for finding the sin of a numerical value in degrees
 QUnit.test("Sin of Degree test", function (assert){
     clearCurrent();
     addDigit('90');
@@ -49,6 +54,7 @@ QUnit.test("Sin of Degree test", function (assert){
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
 });
 
+// Test for finding the cos of a numerical value in degrees
 QUnit.test("Cos of degree test", function ( assert){
     clearCurrent();
     addDigit('180');
@@ -56,7 +62,7 @@ QUnit.test("Cos of degree test", function ( assert){
     assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
 });
 
-
+// Test for finding the tan of a numerical value in degrees
 QUnit.test("Tan of degree test", function ( assert){
     clearCurrent();
     addDigit('45');
@@ -64,35 +70,7 @@ QUnit.test("Tan of degree test", function ( assert){
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
 });
 
-QUnit.test("Inverse test", function( assert){
-    clearCurrent();
-    addDigit('8');
-    inverse();
-    assert.equal(document.getElementById("screen").value, "0.125", "Passed - Expected 0.125")
-});
-
-QUnit.test("Sin of Degree test", function (assert){
-    clearCurrent();
-    addDigit('90');
-    sinDegree();
-    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
-});
-
-QUnit.test("Cos of degree test", function ( assert){
-    clearCurrent();
-    addDigit('180');
-    cosDegree();
-    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
-});
-
-
-QUnit.test("Tan of degree test", function ( assert){
-    clearCurrent();
-    addDigit('45');
-    tanDegree();
-    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
-});
-
+// Test for changing the sign of the current input
 QUnit.test( "Change sign test", function( assert ) {
     clearCurrent();
     addDigit('12');
@@ -100,6 +78,7 @@ QUnit.test( "Change sign test", function( assert ) {
     assert.equal(document.getElementById("screen").value, "-12", "Passed - Expected -12");
 });
 
+// Test for current input to a percentage.
 QUnit.test( "Change percentage test", function( assert ) {
     clearCurrent();
     addDigit('60');
@@ -107,6 +86,7 @@ QUnit.test( "Change percentage test", function( assert ) {
     assert.equal(document.getElementById("screen").value, "0.6", "Passed - Expected 0.6");
 });
 
+// Test for clearing the current input back to 0.
 QUnit.test( "Change current test", function( assert ) {
     clearCurrent();
     addDigit('5');
@@ -119,6 +99,7 @@ QUnit.test( "Change current test", function( assert ) {
     allClear();
 });
 
+// Test that ensures the user does not divide by zero.
 QUnit.test( "Divide by zero test", function( assert ) {
     clearCurrent();
     addDigit('6');
@@ -128,6 +109,7 @@ QUnit.test( "Divide by zero test", function( assert ) {
     assert.equal(document.getElementById("screen").value, "Error Divide By Zero", "Passed - Expected Error Divide By Zero");
 });
 
+// Test calculating the current input squared
 QUnit.test("Square test", function( assert ){
     clearCurrent();
     addDigit('6');
@@ -135,36 +117,51 @@ QUnit.test("Square test", function( assert ){
     assert.equal(document.getElementById("screen").value, "36", "Passed - Expected 36");
 });
 
-QUnit.test("Pie test", function( assert ){
+// Test that checks the Pi button holds the correct numerical value for pi, and when clicked on allows for the user to use it.
+QUnit.test("Pi test", function( assert ){
     clearCurrent();
     addDigit('1');
     enterPie();
     assert.equal(document.getElementById("screen").value, "3.141592653589793", "Passed - Expected 3.141592653589793");
 });
 
+// Test for finding the sin of a numerical value in radians
 QUnit.test("Sin of Radian test", function (assert){
     clearCurrent();
-    addDigit('90');
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('2');
+    calculate();
     sinRadian();
-    assert.equal(document.getElementById("screen").value, "0.893997", "Passed - Expected 0.893997")
+    calculate();
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
 });
 
+// Test for finding the cos of a numerical value in radians
 QUnit.test("Cos of Radian test", function ( assert){
     clearCurrent();
-    addDigit('180');
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('3');
+    calculate();
     cosRadian();
-    assert.equal(document.getElementById("screen").value, "-0.59846", "Passed - Expected -0.59846")
+    calculate();
+    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
 });
 
-
+// Test for finding the tan of a numerical value in radians
 QUnit.test("Tan of Radian test", function ( assert){
     clearCurrent();
-    addDigit('45');
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('4');
+    calculate();
     tanRadian();
-    assert.equal(document.getElementById("screen").value, "1.619775", "Passed - Expected 1.619775")
+    calculate();
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
 });
 
-
+// Test for clearing everything.
 QUnit.test("All Clear test", function ( assert){
     clearCurrent();
     addDigit('8');
@@ -172,7 +169,7 @@ QUnit.test("All Clear test", function ( assert){
     assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
 });
 
-
+// Test for displaying the current input.
 QUnit.test("Displays current input test", function ( assert){
     clearCurrent();
     addDigit('8');
@@ -180,7 +177,7 @@ QUnit.test("Displays current input test", function ( assert){
     assert.equal(document.getElementById("screen").value, "8", "Passed - Expected 8")
 });
 
-
+// Test for calculaing using an operator, the memory and what is current.
 QUnit.test("Calculates using an operator test", function ( assert){
     clearCurrent();
     addDigit('5');
@@ -196,3 +193,4 @@ QUnit.test("Calculates using an operator test", function ( assert){
     displayCurrentInput();
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
 });
+
