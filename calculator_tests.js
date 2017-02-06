@@ -157,8 +157,25 @@ QUnit.test("Sin of Radian test", function (assert){
     addDigit('2');
     calculate();
     sinRadian();
-    calculate();
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+    clearCurrent();
+    addDigit('Math.PI');
+    sinRadian();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('6');
+    calculate();
+    sinRadian();
+    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('-2');
+    calculate();
+    sinRadian();
+    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
 });
 
 // Test for finding the cos of a numerical value in radians
@@ -171,6 +188,32 @@ QUnit.test("Cos of Radian test", function ( assert){
     cosRadian();
     calculate();
     assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('Math.PI');
+    calculate();
+    sinRadian();
+    calculate();
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("*");
+    addDigit('2');
+    storeOperator("/");
+    addDigit('Math.PI');
+    calculate();
+    sinRadian();
+    calculate();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('-2');
+    calculate();
+    sinRadian();
+    calculate();
+    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
 });
 
 // Test for finding the tan of a numerical value in radians
@@ -183,6 +226,30 @@ QUnit.test("Tan of Radian test", function ( assert){
     tanRadian();
     calculate();
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('Math.PI');
+    calculate();
+    sinRadian();
+    calculate();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('-4');
+    calculate();
+    sinRadian();
+    calculate();
+    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
+    clearCurrent();
+    addDigit('Math.PI');
+    storeOperator("/");
+    addDigit('-2');
+    calculate();
+    sinRadian();
+    calculate();
+    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
 });
 
 // Test for clearing everything.
@@ -212,15 +279,16 @@ QUnit.test("Calculates using an operator test", function ( assert){
     storeOperator("*");
     addDigit('7');
     storeOperator("/");
-    addDigit('7');
+    addDigit('-7');
     calculate();
     storeOperator("EE")
     addDigit('3')
     calculate();
     displayCurrentInput();
-    assert.equal(document.getElementById("screen").value, "1000", "Passed - Expected 1000")
+    assert.equal(document.getElementById("screen").value, "-1000", "Passed - Expected -1000")
 });
 
+// Test for storing the current input into the memory
 QUnit.test("Memory store test", function ( assert){
     clearCurrent();
     addDigit('3')
@@ -228,12 +296,14 @@ QUnit.test("Memory store test", function ( assert){
     assert.equal(memValue, "3", "Passed - Expected 3")
            });
 
+// Test for recalling the stored memory
 QUnit.test("Memory recall test", function ( assert){
     clearCurrent();
     memoryRecall();
     assert.equal(document.getElementById("screen").value, "3", "Passed - Expected 3")
 });
 
+// Test for adding the current input to the stored memory
 QUnit.test("Memory plus test", function (assert){
     clearCurrent();
     addDigit('5');
@@ -241,6 +311,7 @@ QUnit.test("Memory plus test", function (assert){
     assert.equal(document.getElementById("screen").value, "8", "Passed - Expected 8")
 });
 
+// Test for subtracting the current input from the stored memory
 QUnit.test("Memory minus test", function ( assert){
     clearCurrent();
     addDigit('1');
@@ -248,6 +319,7 @@ QUnit.test("Memory minus test", function ( assert){
     assert.equal(document.getElementById("screen").value, "2", "Passed - Expected 2")
 });
 
+// Test for erasing the stored memory
 QUnit.test("Memory clear test", function ( assert){
     clearCurrent();
     memoryClear();
