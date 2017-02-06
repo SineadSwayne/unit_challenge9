@@ -64,35 +64,6 @@ QUnit.test("Tan of degree test", function ( assert){
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
 });
 
-QUnit.test("Inverse test", function( assert){
-    clearCurrent();
-    addDigit('8');
-    inverse();
-    assert.equal(document.getElementById("screen").value, "0.125", "Passed - Expected 0.125")
-});
-
-QUnit.test("Sin of Degree test", function (assert){
-    clearCurrent();
-    addDigit('90');
-    sinDegree();
-    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
-});
-
-QUnit.test("Cos of degree test", function ( assert){
-    clearCurrent();
-    addDigit('180');
-    cosDegree();
-    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
-});
-
-
-QUnit.test("Tan of degree test", function ( assert){
-    clearCurrent();
-    addDigit('45');
-    tanDegree();
-    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
-});
-
 QUnit.test( "Change sign test", function( assert ) {
     clearCurrent();
     addDigit('12');
@@ -135,7 +106,7 @@ QUnit.test("Square test", function( assert ){
     assert.equal(document.getElementById("screen").value, "36", "Passed - Expected 36");
 });
 
-QUnit.test("Pie test", function( assert ){
+QUnit.test("Pi test", function( assert ){
     clearCurrent();
     addDigit('1');
     enterPie();
@@ -193,6 +164,42 @@ QUnit.test("Calculates using an operator test", function ( assert){
     storeOperator("/");
     addDigit('7');
     calculate();
+    storeOperator("EE")
+    addDigit('3')
+    calculate();
     displayCurrentInput();
-    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+    assert.equal(document.getElementById("screen").value, "1000", "Passed - Expected 1000")
+});
+
+QUnit.test("Memory store test", function ( assert){
+    clearCurrent();
+    addDigit('3')
+    memoryStore();
+    assert.equal(memValue, "3", "Passed - Expected 3")
+           });
+
+QUnit.test("Memory recall test", function ( assert){
+    clearCurrent();
+    memoryRecall();
+    assert.equal(document.getElementById("screen").value, "3", "Passed - Expected 3")
+});
+
+QUnit.test("Memory plus test", function (assert){
+    clearCurrent();
+    addDigit('5');
+    memoryPlus();
+    assert.equal(document.getElementById("screen").value, "8", "Passed - Expected 8")
+});
+
+QUnit.test("Memory minus test", function ( assert){
+    clearCurrent();
+    addDigit('1');
+    memoryMinus();
+    assert.equal(document.getElementById("screen").value, "2", "Passed - Expected 2")
+});
+
+QUnit.test("Memory clear test", function ( assert){
+    clearCurrent();
+    memoryClear();
+    assert.equal(memValue, "0", "Passed - Expected 0")
 });
