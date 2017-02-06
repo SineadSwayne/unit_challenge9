@@ -289,3 +289,4 @@ function memoryClear() {
     currentInput = memValue;
     displayCurrentInput();
 }
+
