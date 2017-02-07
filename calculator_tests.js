@@ -92,6 +92,15 @@ QUnit.test("Tan of degree test", function ( assert){
     addDigit('45');
     tanDegree();
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
+    clearCurrent();
+    addDigit('135');
+    tanDegree();
+    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
+    clearCurrent();
+    addDigit('180');
+    tanDegree();
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
+
 });
 
 // Test for changing the sign of the current input
@@ -160,10 +169,6 @@ QUnit.test("Sin of Radian test", function (assert){
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
     clearCurrent();
     addDigit('Math.PI');
-    sinRadian();
-    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
-    clearCurrent();
-    addDigit('Math.PI');
     storeOperator("/");
     addDigit('6');
     calculate();
@@ -186,34 +191,14 @@ QUnit.test("Cos of Radian test", function ( assert){
     addDigit('3');
     calculate();
     cosRadian();
-    calculate();
     assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
     clearCurrent();
     addDigit('Math.PI');
     storeOperator("/");
-    addDigit('Math.PI');
-    calculate();
-    sinRadian();
-    calculate();
-    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
-    clearCurrent();
-    addDigit('Math.PI');
-    storeOperator("*");
     addDigit('2');
-    storeOperator("/");
-    addDigit('Math.PI');
     calculate();
-    sinRadian();
-    calculate();
+    cosRadian();
     assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
-    clearCurrent();
-    addDigit('Math.PI');
-    storeOperator("/");
-    addDigit('-2');
-    calculate();
-    sinRadian();
-    calculate();
-    assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
 });
 
 // Test for finding the tan of a numerical value in radians
@@ -224,32 +209,17 @@ QUnit.test("Tan of Radian test", function ( assert){
     addDigit('4');
     calculate();
     tanRadian();
-    calculate();
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected 1")
     clearCurrent();
+    addDigit('3');
+    storeOperator("*");
     addDigit('Math.PI');
+    calculate();
     storeOperator("/");
-    addDigit('Math.PI');
+    addDigit('4');
     calculate();
-    sinRadian();
-    calculate();
-    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0")
-    clearCurrent();
-    addDigit('Math.PI');
-    storeOperator("/");
-    addDigit('-4');
-    calculate();
-    sinRadian();
-    calculate();
+    tanRadian();
     assert.equal(document.getElementById("screen").value, "-1", "Passed - Expected -1")
-    clearCurrent();
-    addDigit('Math.PI');
-    storeOperator("/");
-    addDigit('-2');
-    calculate();
-    sinRadian();
-    calculate();
-    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
 });
 
 // Test for clearing everything.
